@@ -92,4 +92,66 @@ for i in bttn_list:
 calc_entry = Entry(root, width = 33)
 calc_entry.grid(row=0, column=0, columnspan=5)
 
+
+#Индивидуальное задание
+#Функция отвечающая за логику программы и расчетов
+def clicked():
+    if chk_state.get() == 1:
+        if selected.get() == 1:
+            cdh=calc_entry.get()
+            dhanush = float(cdh)/183
+            calc_entry.insert(END, (f'см = {dhanush}Дхануш'))
+        else:
+            calc_entry.insert(END, "Ошибка, не верная система мер ")
+    elif chk_state2.get() == 1:
+        if selected.get() == 2:
+            dm = calc_entry.get()
+            dam = float(dm)/20.9628
+            calc_entry.insert(END, (f'гр = {dam}Дам'))
+        else:
+            calc_entry.insert(END, "Ошибка, не верная система мер ")
+    elif chk_state3.get() == 1:
+        if selected.get() == 3:
+            adh = calc_entry.get()
+            adhaka = float(adh)/3.9
+            calc_entry.insert(END, (f'л = {adhaka}Адхака'))
+        else:
+            calc_entry.insert(END, "Ошибка, не верная система мер ")
+
+
+#Добавляем кнопку перевода
+btn = Button(root, text="Перевод", command=clicked)
+btn.grid(column=4, row=0, sticky="nsew")
+#Просто надпись
+lbl1 = Label(root, text="Исходная единица")
+lbl1.grid(column=6, row=0)
+#Просто надпись
+lbl2 = Label(root, text="Требуемая")
+lbl2.grid(column=6, row=2)
+#Добавляем радиокнопки (Переключатель)
+selected = IntVar()
+rad1 = Radiobutton(root,text='Сантиметры', value=1, variable=selected)
+rad2 = Radiobutton(root,text='Граммы', value=2, variable=selected, command=clicked)
+rad3 = Radiobutton(root,text='Литры', value=3, variable=selected, command=clicked)
+lbl = Label(root)
+rad1.grid(column=5, row=1)
+rad2.grid(column=6, row=1)
+rad3.grid(column=7, row=1)
+#Добавляем флажок
+chk_state = BooleanVar()
+chk_state.set(False)
+chk = Checkbutton(root, text='Дхануш', var=chk_state)
+chk.grid(column=5, row=3)
+
+chk_state2 = BooleanVar()
+chk_state2.set(False)
+chk = Checkbutton(root, text='Дам', var=chk_state2)
+chk.grid(column=6, row=3)
+
+chk_state3 = BooleanVar()
+chk_state3.set(False)
+chk = Checkbutton(root, text='Адхака', var=chk_state3)
+chk.grid(column=7, row=3)
+
+
 root.mainloop()
