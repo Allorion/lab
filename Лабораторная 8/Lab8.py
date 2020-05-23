@@ -106,7 +106,7 @@ lbl = Label(root)
 rad1.grid(row=1, column=0)
 rad2.grid(row=2, column=0)
 
-root.title("Преобразователь")
+root.title("Шифровальщик by Allori")
 text = Text(width=100, height=25)
 text.grid(columnspan=2)
 
