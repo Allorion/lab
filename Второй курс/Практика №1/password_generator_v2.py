@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 #by Allori  https://github.com/Allorion/
 from itertools import permutations, combinations
 
@@ -11,7 +11,8 @@ quantity = 0
 
 #Проверям возможность повторения символов и выполняем действия с алфавитом
 if repeat == '1':
-    aphabet = "".join(set(aphabet))
+    aphabet = ''.join(set(aphabet))
+    print(aphabet)
 elif repeat == '2':
     aphabet = aphabet
 else:
