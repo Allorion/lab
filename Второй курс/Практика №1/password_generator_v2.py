@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #by Allori  https://github.com/Allorion/
-from itertools import permutations, combinations
+from itertools import permutations
 
 #Ввод необходимых значений и выбор режима работы программы
 aphabet = input('Введите алфавит для генирации пароля:')
@@ -12,7 +12,6 @@ quantity = 0
 #Проверям возможность повторения символов и выполняем действия с алфавитом
 if repeat == '1':
     aphabet = ''.join(set(aphabet))
-    print(aphabet)
 elif repeat == '2':
     aphabet = aphabet
 else:
